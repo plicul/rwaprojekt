@@ -1,0 +1,258 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Masterstr.Master.cs" Inherits="ProjektRWA.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <!-- nemam pojma zasto nezeli linkat css file pa da radi,
+        to cu zadnje rjesit a ako neradi nikako cu pustit ovako -->
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        #nav {
+            display:block;
+            width:100vw;
+            height:10vh;
+            margin-left:32vw;
+            margin-top:10vh;
+            margin-bottom:5vh;
+        }
+
+            #nav li {
+                display: inline;
+            }
+
+                #nav li a {
+                    font-family: Arial;
+                    font-size: 12px;
+                    text-decoration: none;
+                    float: left;
+                    padding: 10px;
+                    background-color: #333333;
+                    color: #ffffff;
+                    border-bottom: 1px;
+                    border-bottom-color: #000000;
+                    border-bottom-style: solid;
+                }
+
+                    #nav li a:hover {
+                        background-color: #9B1C26;
+                        padding-bottom: 12px;
+                        border-bottom: 2px;
+                        border-bottom-color: #000000;
+                        border-bottom-style: solid;
+                        margin: -1px;
+                    }
+
+
+
+        /* vertikalni meni */
+            .navigation {
+                display:block;
+                width: 150px;
+                height: 100vh;
+                margin-left: 10vw;
+                margin-top: 0vh;
+                float:left;
+
+            }
+
+        /* reset our lists to remove bullet points and padding */
+            .mainmenu, .submenu {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+            }
+
+            .mainmenu a {
+                    display:inline-block;
+                    font-family: Arial;
+                    font-size: 12px;
+                    text-decoration: none;
+                    float: left;
+                    padding: 10px;
+                    background-color: #333333;
+                    color: #ffffff;
+                    border-bottom: 1px;
+                    border-bottom-color: #000000;
+                    border-bottom-style: solid;
+            }
+
+            .mainmenu a:hover {
+                background-color: #9B1C26;
+                border-bottom-color: #000000;
+                border-bottom-style: solid;
+                }
+
+            /*
+            svi submenu nakon toggleon a prije sljedeceg mainmenu se otvore
+            */
+
+            .toggleon ~ .submenu {
+                display:block;
+                max-height: 200px;
+            }
+            .toggleon ~ .mainmenu ~ .submenu{
+                overflow: hidden;
+                max-height: 0;
+                -webkit-transition: all 0.5s ease-out;
+            }
+
+        .submenu a {
+            display:inline-block;
+            font-family: Arial;
+            font-size: 12px;
+            text-decoration: none;
+            float: left;
+            padding: 10px;
+            background-color: #333333;
+            color: #ffffff;
+            border-bottom: 1px;
+            border-bottom-color: #000000;
+            border-bottom-style: solid;
+            }
+
+                /* hover behaviour for links inside .submenu */
+         .submenu a:hover {
+             background-color: #9B1C26;
+             border-bottom-color: #000000;
+             border-bottom-style: solid;
+         }
+
+        
+        .submenu {
+            overflow: hidden;
+            max-height: 0;
+            -webkit-transition: all 0.5s ease-out;
+        }
+
+       .toggleoff{
+                background-color: #999;
+                color: black;
+                padding: 10px;
+        }
+
+       .toggleon{
+                background-color: #999;
+                color: black;
+                padding: 10px;
+       }
+        #menuvertical {
+            width: 150px;
+        }
+
+        /*30 linija koda za jednu rijec*/
+        .izdv_text {
+            float:left;
+            margin-left:5vw;
+            font-family: Arial;
+            font-size: 40px;
+            padding: 10px;
+            background-color: #333333;
+            color: #ffffff;
+            border-bottom: 1px;
+            border-bottom-color: #000000;
+            border-bottom-style: solid;
+            width:150x;
+            height:40px;
+            
+        }
+        #izdv:hover{
+            background-color: #9B1C26;
+            border-bottom-color: #000000;
+            border-bottom-style: solid;
+        }
+        
+        /*okvir*/
+        .okvir{
+            float:left;
+            height:35vh;
+            width:40vw;
+            margin-left:5vw;
+            margin-right:10vw;
+            border: 5px;
+            border-style:dashed;
+            border-radius: 25px;
+            border-color:dimgrey;
+            padding:4px;
+        }
+
+        .kartica{
+            float:left;
+            height:200px;
+            width:150px;
+            border:2px;
+            border-style:solid;
+            border-color:dimgrey;
+        }
+        .kartica_img{
+            height:150px;
+            width:150px;
+        }
+        .kartica_txt{
+            margin-top:20px;
+            float:left;
+
+        }
+
+    </style>
+
+    <title></title>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- glavni meni na svim str -->
+            <div id="menihorizontal">
+                    <ul id="nav">
+                        <li><a>PLACEHOLDER1</a></li>
+                        <li><a>PLACEHOLDER2</a></li>
+                        <li><a>PLACEHOLDER3</a></li>
+                        <li><a>PLACEHOLDER4</a></li>
+                        <li><a>PLACEHOLDER5</a></li>
+
+                    </ul>
+            </div>
+
+            <div id="menuvertical">
+                <nav class="navigation">
+                    <ul class="mainmenu">
+                        <li><asp:Button ID="Button3" runat="server" Text="+" CssClass="toggleoff" OnClick="Toggle_Click3" /><a href="">PLACEHOLDER</a></li>
+                        <li><asp:Button ID="Button2" runat="server" Text="+" CssClass="toggleoff" OnClick="Toggle_Click2" /><a href="">PLACEHOLDER</a>
+                            <ul class="submenu">
+                                <li><a href="">SUBPLACEHOLDER</a></li>
+                                <li><a href="">SUBPLACEHOLDER</a></li>
+                                <li><a href="">SUBPLACEHOLDER</a></li>
+                            </ul>
+                        </li>
+                        <li><asp:Button ID="Button1" runat="server" Text="+" CssClass="toggleoff" OnClick="Toggle_Click1" /><a>PLACEHOLDER</a>
+                            <ul class="submenu">
+                                <li><a href="">SUBPLACEHOLDER</a></li>
+                                <li><a href="">SUBPLACEHOLDER</a></li>
+                                <li><a href="">SUBPLACEHOLDER</a></li>
+                            </ul>
+                        </li>
+                        <li><asp:Button ID="Button4" runat="server" Text="+" CssClass="toggleoff" OnClick="Toggle_Click4" /><a href="">PLACEHOLDER</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="content1">            
+                <asp:ContentPlaceHolder ID="content1placeholder" runat="server"></asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+
+
+
+
+        <div>
+
+        </div>
+    </form>
+</body>
+</html>
