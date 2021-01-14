@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjektRWA {
-    
-    
-    public partial class Site1 {
-        
+namespace ProjektRWA
+{
+
+
+    public partial class Site1
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,16 @@ namespace ProjektRWA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
+        /// <summary>
+        /// listaKategorija control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView listaKategorija;
+
         /// <summary>
         /// Button3 control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace ProjektRWA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button3;
-        
+
         /// <summary>
         /// Button2 control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace ProjektRWA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
-        
+
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace ProjektRWA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// Button4 control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace ProjektRWA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button4;
-        
+
         /// <summary>
         /// content1placeholder control.
         /// </summary>

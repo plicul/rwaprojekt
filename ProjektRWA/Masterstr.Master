@@ -159,7 +159,11 @@
             border-bottom-style: solid;
             width:150x;
             height:40px;
-            
+        }
+
+        .proizvodi {
+            float:left;
+            margin-left:5vw;
         }
         #izdv:hover{
             background-color: #9B1C26;
@@ -219,8 +223,46 @@
                     </ul>
             </div>
 
+
+            <!-- novi vertikalni meni koji se sam nadopunjuje po kategorijama iz baze podataka, stari zakomentiran ispod -->
             <div id="menuvertical">
                 <nav class="navigation">
+                    <asp:ListView ID = "listaKategorija"
+                        ItemType = "ProjektRWA.Models.Kategorija"
+                        runat = "server"
+                        SelectMethod="GetKategorije"
+                        GroupItemCount="1"
+                        GroupPlaceholderID="groupPlaceholder"
+                        ItemPlaceholderID="itemPlaceholder">
+
+                        <LayoutTemplate>
+                            <table>
+                                <tbody>
+                                    <asp:PlaceHolder runat="server" ID="groupPlaceholder"></asp:PlaceHolder>
+                                </tbody>
+                            </table>
+                        </LayoutTemplate>
+
+                        <GroupTemplate>
+                            <tr>
+                                <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
+                            </tr>
+                        </GroupTemplate>
+
+                        <ItemTemplate>       
+                            <td>
+                                <b class ="mainmenu">
+                                    <a href = "/ListaArtikala.aspx?id=<%#: Item.KategorijaID %>">
+                                        <%#: Item.KategorijaIme %> 
+                                    </a> 
+                                </b> 
+                            </td>
+                        </ItemTemplate>
+
+                    </asp:ListView>
+                </nav>
+
+             <!--   <nav class="navigation">
                     <ul class="mainmenu">
                         <li><asp:Button ID="Button3" runat="server" Text="+" CssClass="toggleoff" OnClick="Toggle_Click3" /><a href="">PLACEHOLDER</a></li>
                         <li><asp:Button ID="Button2" runat="server" Text="+" CssClass="toggleoff" OnClick="Toggle_Click2" /><a href="">PLACEHOLDER</a>
@@ -240,6 +282,8 @@
                         <li><asp:Button ID="Button4" runat="server" Text="+" CssClass="toggleoff" OnClick="Toggle_Click4" /><a href="">PLACEHOLDER</a></li>
                     </ul>
                 </nav>
+            -->
+
             </div>
             <div id="content1">            
                 <asp:ContentPlaceHolder ID="content1placeholder" runat="server"></asp:ContentPlaceHolder>

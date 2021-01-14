@@ -74,15 +74,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DetaljiArtikla.aspx" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\CSS\Meni.css" />
+    <Content Include="ListaArtikala.aspx" />
     <Content Include="test.jpg" />
     <Content Include="Web.config" />
     <Content Include="Naslovna.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetaljiArtikla.aspx.cs">
+      <DependentUpon>DetaljiArtikla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetaljiArtikla.aspx.designer.cs">
+      <DependentUpon>DetaljiArtikla.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListaArtikala.aspx.cs">
+      <DependentUpon>ListaArtikala.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaArtikala.aspx.designer.cs">
+      <DependentUpon>ListaArtikala.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Artikal.cs" />
     <Compile Include="Models\ArtikalContext.cs" />
@@ -114,7 +130,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

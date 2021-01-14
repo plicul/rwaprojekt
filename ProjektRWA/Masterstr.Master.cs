@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Linq;
+using ProjektRWA.Models;
 
 namespace ProjektRWA
 {
@@ -13,6 +15,14 @@ namespace ProjektRWA
         {
 
         }
+
+        public IQueryable<Kategorija> GetKategorije()
+        {
+            var _db = new ProjektRWA.Models.ArtikalContext();
+            IQueryable<Kategorija> query = _db.Kategorije;
+            return query;
+        }
+
         protected void Toggle_Click1(object sender, EventArgs e)
         {
             if (Button1.CssClass == "toggleoff")
