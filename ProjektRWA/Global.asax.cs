@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Data.Entity;
 using ProjektRWA.Models;
+using ProjektRWA.Logic;
 
 namespace ProjektRWA
 {
@@ -15,6 +16,9 @@ namespace ProjektRWA
         protected void Application_Start(object sender, EventArgs e)
         {
             Database.SetInitializer(new BazaArtikalaInit());
+
+            RoleActions roleActions = new RoleActions();
+            roleActions.AddUserAndRole();
         }
     }
 }

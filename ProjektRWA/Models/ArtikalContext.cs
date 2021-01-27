@@ -10,5 +10,8 @@ namespace ProjektRWA.Models
         }
         public DbSet<Kategorija> Kategorije { get; set; }
         public DbSet<Artikal> Artikli { get; set; }
+        public DbSet<CartItem> ShoppingCartItems { get; set; }
+        public DbSet<Narudzba> Narudzbe { get; set; }
+        public DbSet<NarudzbaDetalj> DetaljiNarudzbe { get; set; }
     }
 }
