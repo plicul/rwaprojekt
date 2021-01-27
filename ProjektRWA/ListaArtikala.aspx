@@ -52,6 +52,11 @@
                                         <b>Cijena: </b><%#Item.ArtikalCijena %><a>kn</a>
                                     </span>
                                     <br />
+                                    <a href="AddToCart.aspx?productID=<%#:Item.ArtikalID %>">
+                                        <span class="proizvodi">
+                                            <b>Dodaj u košaricu</b>
+                                        </span>
+                                    </a>
                                 </td>
                             </tr>
                             <tr>

@@ -214,11 +214,13 @@
             <!-- glavni meni na svim str -->
             <div id="menihorizontal">
                     <ul id="nav">
-                        <li><a>PLACEHOLDER1</a></li>
-                        <li><a>PLACEHOLDER2</a></li>
+                        <li><a runat="server" id="adminLink" visible="false" href="~/Admin/AdminPage.aspx">Admin</a></li>
+                        <li><a runat="server" id="logoutLink" visible="false" href="~/Account/Login.aspx">Logout</a></li>
+                        <li><a runat="server" id="loginLink" href="~/Account/Login.aspx">Login</a></li>
+                        <li><a runat="server" id="registerLink" href="/Account/Register.aspx">Register</a></li>
                         <li><a>PLACEHOLDER3</a></li>
                         <li><a>PLACEHOLDER4</a></li>
-                        <li><a>PLACEHOLDER5</a></li>
+                        <li><a runat ="server" href="~/Kosarica" id="cartCount">&nbsp;</a></li>
 
                     </ul>
             </div>

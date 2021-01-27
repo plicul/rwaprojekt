@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Linq;
 using ProjektRWA.Models;
+using ProjektRWA.Logic;
 
 namespace ProjektRWA
 {
@@ -13,7 +13,31 @@ namespace ProjektRWA
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (HttpContext.Current.User.IsInRole("canEdit"))
+            {
+                adminLink.Visible = true;
+            }
 
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                loginLink.Visible = false;
+                registerLink.Visible = false;
+                logoutLink.Visible = true;
+            } else
+            {
+                loginLink.Visible = true;
+                registerLink.Visible = true;
+                logoutLink.Visible = false;
+            }
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
+            {
+                string cartStr = string.Format("Cart ({0})", usersShoppingCart.GetCount());
+                cartCount.InnerText = cartStr;
+            }
         }
 
         public IQueryable<Kategorija> GetKategorije()
