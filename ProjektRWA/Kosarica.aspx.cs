@@ -16,6 +16,14 @@ namespace ProjektRWA
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                CheckoutButton.Enabled = true;
+            } else
+            {
+                CheckoutButton.Enabled = false;
+            }
+
             using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
             {
                 decimal cartTotal = 0;
@@ -23,7 +31,7 @@ namespace ProjektRWA
 
                 if (cartTotal > 0)
                 {
-                    lblTotal.Text = String.Format("{0:c}", cartTotal);
+                    lblTotal.Text = cartTotal + "kn";
                 }
                 else
                 {
@@ -31,6 +39,7 @@ namespace ProjektRWA
                     lblTotal.Text = "";
                     KosaricaTitle.InnerText = "Košarica je prazna";
                     UpdateButton.Visible = false;
+                    CheckoutButton.Visible = false;
                 }
             }
         }
@@ -85,6 +94,16 @@ namespace ProjektRWA
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
             UpdateCartItems();
+        }
+
+        protected void CheckoutButton_Click(object sender, EventArgs e)
+        {
+            using (ProjektRWA.Logic.ShoppingCartActions usersShoppingCart =
+              new ProjektRWA.Logic.ShoppingCartActions())
+            {
+                usersShoppingCart.EmptyCart();
+                Response.Redirect("~/Checkout/CheckoutComplete.aspx");
+            }
         }
     }
 }

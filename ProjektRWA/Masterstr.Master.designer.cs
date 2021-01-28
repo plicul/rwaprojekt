@@ -33,6 +33,24 @@ namespace ProjektRWA
         protected global::System.Web.UI.HtmlControls.HtmlAnchor adminLink;
 
         /// <summary>
+        /// naslovnaLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor naslovnaLink;
+
+        /// <summary>
+        /// cartCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor cartCount;
+
+        /// <summary>
         /// logoutLink control.
         /// </summary>
         /// <remarks>
@@ -58,15 +76,6 @@ namespace ProjektRWA
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor registerLink;
-
-        /// <summary>
-        /// cartCount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor cartCount;
 
         /// <summary>
         /// listaKategorija control.

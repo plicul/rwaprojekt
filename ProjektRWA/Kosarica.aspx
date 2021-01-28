@@ -9,14 +9,23 @@
         CssClass="table table-striped table-bordered">
         <Columns>
             <asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID" />
-            <asp:BoundField DataField="Product.ArtikalIme" HeaderText="Ime " />
-            <asp:BoundField DataField="Product.ArtikalCijena" HeaderText="Cijena (svaki)" DataFormatString="{0:c}" />
-            <asp:TemplateField HeaderText="Količina">
+            <asp:BoundField DataField="Product.ArtikalIme" HeaderText="Ime" />
+            <asp:TemplateField HeaderText="Cijena (svaki)">
                 <ItemTemplate>
-                    <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) * Convert.ToDouble(Item.Product.ArtikalCijena))) %>
+                    <%#: Convert.ToDouble(Item.Product.ArtikalCijena) %>kn
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Briši artikal">
+            <asp:TemplateField HeaderText="Količina">
+                 <ItemTemplate>
+                    <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox> 
+                </ItemTemplate>
+            </asp:TemplateField>
+           <asp:TemplateField HeaderText="Ukupna cijena artikla">            
+                <ItemTemplate>
+                    <%#: (Convert.ToDouble(Item.Quantity) *  Convert.ToDouble(Item.Product.ArtikalCijena))%>kn
+                </ItemTemplate>        
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Ukloni artikal">
                 <ItemTemplate>
                     <asp:CheckBox ID="Remove" runat="server" />
                 </ItemTemplate>
@@ -35,10 +44,10 @@
     <table>
         <tr>
             <td>
-                <asp:Button ID="UpdateButton" runat="server" Text="Update" OnClick="UpdateButton_Click" />
+                <asp:Button ID="UpdateButton" runat="server" Text="Ažuriraj" OnClick="UpdateButton_Click" />
             </td>
             <td>
-                <!--checkout placeholder-->
+                <asp:Button ID="CheckoutButton" runat="server" Text="Kupi" OnClick="CheckoutButton_Click" />
             </td>
         </tr>
     </table>

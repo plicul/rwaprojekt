@@ -109,11 +109,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="AddToCart.aspx" />
     <Content Include="Admin\AdminPage.aspx" />
-    <Content Include="Checkout\CheckoutCancel.aspx" />
     <Content Include="Checkout\CheckoutComplete.aspx" />
-    <Content Include="Checkout\CheckoutError.aspx" />
-    <Content Include="Checkout\CheckoutReview.aspx" />
-    <Content Include="Checkout\CheckoutStart.aspx" />
     <Content Include="DetaljiArtikla.aspx" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\CSS\Meni.css" />
@@ -153,40 +149,12 @@
     <Compile Include="Admin\AdminPage.aspx.designer.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Checkout\CheckoutCancel.aspx.cs">
-      <DependentUpon>CheckoutCancel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Checkout\CheckoutCancel.aspx.designer.cs">
-      <DependentUpon>CheckoutCancel.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Checkout\CheckoutComplete.aspx.cs">
       <DependentUpon>CheckoutComplete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Checkout\CheckoutComplete.aspx.designer.cs">
       <DependentUpon>CheckoutComplete.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Checkout\CheckoutError.aspx.cs">
-      <DependentUpon>CheckoutError.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Checkout\CheckoutError.aspx.designer.cs">
-      <DependentUpon>CheckoutError.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Checkout\CheckoutReview.aspx.cs">
-      <DependentUpon>CheckoutReview.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Checkout\CheckoutReview.aspx.designer.cs">
-      <DependentUpon>CheckoutReview.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Checkout\CheckoutStart.aspx.cs">
-      <DependentUpon>CheckoutStart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Checkout\CheckoutStart.aspx.designer.cs">
-      <DependentUpon>CheckoutStart.aspx</DependentUpon>
     </Compile>
     <Compile Include="DetaljiArtikla.aspx.cs">
       <DependentUpon>DetaljiArtikla.aspx</DependentUpon>
